@@ -11,6 +11,10 @@
   <script type="module" src="/gitmojis.js" defer></script>
   <script type="module" src="/main.js" defer></script>
   <style>
+    body {
+      overflow: hidden;
+      background-color: transparent;
+    }
     .container {
       /*backdrop-filter: blur(1.5rem);*/
       margin: 0;
@@ -28,7 +32,7 @@
     <form id="search-emoji-form">  
       <div class="mb-3">
       <input type="text" class="form-control" id="search" aria-describedby="emailHelp" placeholder="your emoji name" autofocus>
-      <div id="search" class="form-text">just press ENTER to copy gitmoji unicode into your clipboard & exit the app</div>
+      <!-- <div id="search" class="form-text">just press ENTER to copy gitmoji unicode into your clipboard & exit the app</div> -->
     </div>
     </form>
     <ul id="emojis" class="list-group"></ul>

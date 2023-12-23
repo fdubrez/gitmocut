@@ -41,13 +41,15 @@
     },
     "windows": [
       {
-        "decorations": true,
-        "skipTaskbar": false,
+        "decorations": false,
+        "skipTaskbar": true,
         "focus": true,
         "center": true,
         "transparent": true,
         "fullscreen": false,
-        "resizable": true,
+        "resizable": false,
+        "width": 400,
+        "height": 600,
         "title": "gitmocut"
       }
     ]
