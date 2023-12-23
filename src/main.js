@@ -610,7 +610,7 @@ window.addEventListener("DOMContentLoaded", () => {
   document.querySelector("#search-emoji-form").addEventListener('input', function (evt) {
     const text = evt.target.value;
     emojiListEl.innerHTML = gitmojis
-      .filter(x => x.keywords.some(y => y.indexOf(text) !== -1))
+      .filter(x => x.keywords.some(y => y.indexOf(text) !== -1) || x.description.indexOf(text) !== -1)
       .map(x => liItem(x))
       .join("\n");
   });
@@ -620,7 +620,7 @@ window.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     const text = inputEl.value
     const emoji = gitmojis
-      .find(x => x.keywords.some(y => y.startsWith(text)));
+      .find(x => x.keywords.some(y => y.indexOf(text) !== -1) || x.description.indexOf(text) !== -1);
     emojiListEl.innerHTML = `<li class="list-group-item">${emoji.keywords[0]} ${emoji.emoji}</li>`;
     // add emoji to clipboard
     await writeText(emoji.emoji);
